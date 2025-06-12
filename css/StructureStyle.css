@@ -40,6 +40,13 @@ body {
     line-height: 1.6;
 }
 
+@media screen and (max-width: 700px) {
+    .content, .sidebar {
+        width: 100%;
+        float: none;
+    }
+}
+
 .footer {
     padding: 20px;
     text-align: center;
