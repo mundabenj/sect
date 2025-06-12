@@ -1,4 +1,5 @@
 /* this file is used to import all the other CSS files for the project */
+@import url("ImageStyle.css");
 @import url("StructureStyle.css");
 @import url("TableStyle.css");
 @import url("TopNavStyle.css");

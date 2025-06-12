@@ -11,7 +11,7 @@ body {
 .header {
     padding: 20px;
     text-align: center;
-    background: #1abc9c;
+    background: #92b3cc;
     color: white;
 }
 
@@ -38,10 +38,11 @@ body {
 .content, .sidebar p {
     font-size: 18px;
     line-height: 1.6;
+    text-align: justify;
 }
 
 @media screen and (max-width: 700px) {
-    .content, .sidebar {
+    .content, .sidebar, img {
         width: 100%;
         float: none;
     }
@@ -50,7 +51,7 @@ body {
 .footer {
     padding: 20px;
     text-align: center;
-    background: #1abc9c;
-    color: white;
+    background: #92b3cc;
+    color: rgb(24, 24, 24);
     line-height: 0.2;
 }
