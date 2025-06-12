@@ -1,0 +1,49 @@
+/* StructureStyle.css */
+/* This file contains the CSS styles for the structure of the webpage */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+    width: 60%;
+}
+.content {
+    background-color: #f1f1f1;
+    padding: 20px;
+    float: left;
+    width: 66.66%;
+}
+
+.sidebar {
+    float: left;
+    width: 33.33%;
+    background-color: #f1f1f1;
+    padding: 15px;
+}
+
+.content, .sidebar p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    line-height: 0.2;
+}
