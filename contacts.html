@@ -30,16 +30,16 @@
     <div class="content">
         <h2>Talk to Us</h2>
         
-<form action="" method="post">
-    <input type="text" placeholder="Enter your full name" required/><br>
-    <input type="email" placeholder="Enter your email address" required /><br>
-    <input type="tel" placeholder="Enter your phone number" required /><br>
-        <select name="" id="">
+<form action="processes.php" method="post">
+    <input type="text" name="allnames" placeholder="Enter your full name" required/><br>
+    <input type="email" name="email" placeholder="Enter your email address" required /><br>
+    <input type="tel" name="phone" placeholder="Enter your phone number" required /><br>
+        <select name="subject" id="">
         <option value="" disabled selected>Select Subject</option>
-        <option value="option1">Email Support</option>
-        <option value="option2">eLearning Support</option>
-        <option value="option3">Attendance Support</option>
-        <option value="option5">General Feedback</option>
+        <option>Email Support</option>
+        <option>eLearning Support</option>
+        <option>Attendance Support</option>
+        <option>General Feedback</option>
     </select><br>
     <textarea name="message" rows="5" cols="30" placeholder="Enter your message here..." required></textarea><br>
     <input type="submit" value="Send Message" />
