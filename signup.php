@@ -1,3 +1,7 @@
+<?php
+    require 'dbConnect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +38,34 @@
     <input type="text" placeholder="Enter your full name" required/><br>
     <input type="email" placeholder="Enter your email address" required /><br>
     <input type="tel" placeholder="Enter your phone number" required /><br>
+
+
+<select name="genderId" required>
+    <option value="">Select your gender</option>
+    <?php
+    $spot_gender = "select * from gender";
+    $result = $conn->query($spot_gender);
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $row['genderId'] . "'>" . $row['gender'] . "</option>";
+    }
+    ?>
+</select>
+
+
+<select name="roleId" required>
+    <option value="">Select your role</option>
+    <?php
+    $spot_role = "select * from roles";
+    $result = $conn->query($spot_role);
+    while ($row = $result->fetch_assoc()) {
+        if ($row['role'] == 'Admin') {
+            continue; // Skip the Admin role
+        }
+        echo "<option value='" . $row['roleId'] . "'>" . $row['role'] . "</option>";
+    }
+    ?>
+</select>
+
     <input type="text" placeholder="Create a username" required /><br>
     <input type="password" placeholder="Create a password" required /><br>
     <input type="password" placeholder="Confirm your password" required /><br>
