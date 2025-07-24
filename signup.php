@@ -8,9 +8,9 @@
         <h2>Sign Up</h2>
 
 <form action="proc/processes.php" method="post">
-    <input type="text" placeholder="Enter your full name" required/><br>
-    <input type="email" placeholder="Enter your email address" required /><br>
-    <input type="tel" placeholder="Enter your phone number" required /><br>
+    <input type="text" name="fullname" placeholder="Enter your full name" required/><br>
+    <input type="email" name="email" placeholder="Enter your email address" required /><br>
+    <input type="tel" name="phone" placeholder="Enter your phone number" maxlength="13" required /><br>
 
 
 <select name="genderId" required>
@@ -39,9 +39,9 @@
     ?>
 </select>
 
-    <input type="text" placeholder="Create a username" required /><br>
-    <input type="password" placeholder="Create a password" required /><br>
-    <input type="password" placeholder="Confirm your password" required /><br>
+    <input type="text" name="username" placeholder="Create a username" required /><br>
+    <input type="password" name="password" placeholder="Create a password" required /><br>
+    <input type="password" name="confirm_password" placeholder="Confirm your password" required /><br>
 <br>
     <input type="submit" name ="signup" value="Sign Up" />
     <a href="signin.php">Already have an account? Sign In</a>

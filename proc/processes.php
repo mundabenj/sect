@@ -1,5 +1,5 @@
 <?php
-require 'config/dbConnect.php';
+require '../config/dbConnect.php';
 // Check if the form is submitted
 if(isset($_POST['send_message'])) {
     // Retrieve form data
@@ -64,6 +64,14 @@ if(isset($_POST['signup'])) {
         exit;
     }
 
+
+    // vlidate email format
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format.";
+        exit;
+    }
+
     // Check if email already exists
     $check_email = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $check_email->bind_param("s", $email);
@@ -75,15 +83,9 @@ if(isset($_POST['signup'])) {
         exit;
     }
 
-    // vlidate email format
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email format.";
-        exit;
-    }
 
     // encrypt password using password_hash
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $hashed_password = password_hash($confirm_password, PASSWORD_DEFAULT);
 
 
     // Prepare and bind
@@ -92,7 +94,7 @@ if(isset($_POST['signup'])) {
 
     // Execute the statement
     if($stmt->execute()) {
-        header("Location: signin.php?status=success");
+        header("Location: ../signin.php?status=success");
         exit;
     } else {
         echo "Error: " . $stmt->error;
