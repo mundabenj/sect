@@ -90,7 +90,7 @@ if(isset($_POST['signup'])) {
 
     // Execute the statement
     if($stmt->execute()) {
-        header("Location: ../signin.php?status=success");
+        header("Location: ../persons.php?status=success");
         exit;
     } else {
         echo "Error: " . $stmt->error;
@@ -117,6 +117,38 @@ if(isset($_GET['delete_user'])) {
     // Execute the statement
     if($stmt->execute()) {
         header("Location: ../persons.php?status=deleted");
+        exit;
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    // Close the statement
+    $stmt->close();
+}
+
+if(isset($_POST['update_user'])) {
+    // Retrieve form data
+    $fullname = ucwords(strtolower($_POST['fullname']));
+    $email = strtolower($_POST['email']);
+    $phone = $_POST['phone'];
+    $genderId = $_POST['genderId'];
+    $roleId = $_POST['roleId'];
+    $username = strtolower($_POST['username']);
+    $userId = $_POST['userId'];
+
+    // Validate inputs
+    if(empty($fullname) || empty($email) || empty($phone) || empty($genderId) || empty($roleId) || empty($username)) {
+        echo "All fields are required.";
+        exit;
+    }
+
+    // Prepare and bind
+    $stmt = $conn->prepare("UPDATE users SET fullname = ?, email = ?, phone = ?, genderId = ?, roleId = ?, username = ? WHERE userId = ?");
+    $stmt->bind_param("ssssssi", $fullname, $email, $phone, $genderId, $roleId, $username, $userId);
+
+    // Execute the statement
+    if($stmt->execute()) {
+        header("Location: ../persons.php?status=updated");
         exit;
     } else {
         echo "Error: " . $stmt->error;

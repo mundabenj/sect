@@ -5,9 +5,9 @@
 ?>
 <div class="row">
     <div class="content">
-        <h2>Welcome to Our About Page</h2>
+        <h2>Welcome to users page</h2>
 <table>
-    <caption>Stationery Products</caption>
+    <caption>All Users</caption>
     <tr>
         <th>SN</th>
         <th>Fullname</th>
@@ -20,18 +20,19 @@
 
     </tr>
 <?php
-$spot_users = "SELECT * FROM users left join roles using (roleId) left join gender using (genderId) WHERE users.status = 0 ORDER BY users.fullname DESC";
-$result = $conn->query($spot_users);
+$spot_users = "SELECT * FROM users left join roles using (roleId) left join gender using (genderId) WHERE users.status = 0 ORDER BY users.fullname ASC";
+$result = $conn->query($spot_users); $sn = 0;
 while ($row = $result->fetch_assoc()) {
+    $sn++;
 ?>
 <tr>
-    <td><?php echo $row['userId']; ?></td>
+    <td><?php echo $sn; ?></td>
     <td><?php echo $row['fullname']; ?></td>
     <td><?php echo $row['email']; ?></td>
     <td><?php echo $row['phone']; ?></td>
     <td><?php echo $row['gender']; ?></td>
     <td><?php echo $row['role']; ?></td>
-    <td><?php echo $row['dateCreate']; ?></td>
+    <td><?php echo $row['userUpdated']; ?></td>
     <td>
         [ <a href="edit_user.php?id=<?php echo $row['userId']; ?>">Edit</a> ] |
         [ <a href="proc/processes.php?delete_user=<?php print $row['userId']; ?>" onclick="return confirm('Are you sure you want to delete <?php echo $row['fullname']; ?>?');">Del</a> ]
