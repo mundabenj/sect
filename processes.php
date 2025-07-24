@@ -1,5 +1,5 @@
 <?php
-require 'dbConnect.php';
+require 'config/dbConnect.php';
 // Check if the form is submitted
 if(isset($_POST['send_message'])) {
     // Retrieve form data

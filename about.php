@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - DBT</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="topnav">
-    <!-- Top nav section -->
-    <a href="./">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="products.html">Products</a>
-    <a href="hobbies.html">Hobbies</a>
-    <a href="contacts.html">Contacts</a>
-
-    <div class="topnav-right">
-        <a href="signin.html">Sign In</a>
-        <a href="signup.html">Sign Up</a>
-    </div>
-</div>
+<?php
+    require 'config/dbConnect.php';
+    require 'includes/header.php';
+    require 'includes/nav.php';
+?>
 
 <div class="header">
     <h1>About Us</h1>
@@ -44,10 +25,6 @@ Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliqu
         our services and how we can help you achieve your goals.</p>
     </div>
 </div>
-<div class="footer">
-    <p>© 2025 DBT. All rights reserved.</p>
-    <p>Contact us at <a href="mailto:dbt@yahoo.com">dbt@yahoo.com</a></p>
-</div>
-
-</body>
-</html>
+<?php
+    require 'includes/footer.php';
+?>

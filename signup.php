@@ -1,31 +1,8 @@
 <?php
-    require 'dbConnect.php';
+    require 'config/dbConnect.php';
+    require 'includes/header.php';
+    require 'includes/nav.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - DBT</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="topnav">
-    <!-- Top nav section -->
-    <a href="./">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="products.html">Products</a>
-    <a href="hobbies.html">Hobbies</a>
-    <a href="contacts.html">Contacts</a>
-
-    <div class="topnav-right">
-        <a href="signin.html">Sign In</a>
-        <a href="signup.html">Sign Up</a>
-    </div>
-</div>
 
 <div class="header">
     <h1>Sign Up</h1>
@@ -71,7 +48,7 @@
     <input type="password" placeholder="Confirm your password" required /><br>
 <br>
     <input type="submit" value="Sign Up" />
-    <a href="signin.html">Already have an account? Sign In</a>
+    <a href="signin.php">Already have an account? Sign In</a>
 </form>
 
 <p>HTML forms enable you to gather user input in various formats, making it easier to collect structured data. The form above includes fields for text, email, phone number, password, color selection, date and time selection, number input, range input, file upload, a text area for messages, checkboxes, radio buttons, and a dropdown menu—each designed to capture specific information efficiently.</p>
@@ -94,10 +71,6 @@
         our services and how we can help you achieve your goals.</p>
     </div>
 </div>
-<div class="footer">
-    <p>© 2025 DBT. All rights reserved.</p>
-    <p>Contact us at <a href="mailto:dbt@yahoo.com">dbt@yahoo.com</a></p>
-</div>
-
-</body>
-</html>
+<?php
+    require 'includes/footer.php';
+?>
