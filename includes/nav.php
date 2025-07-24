@@ -13,3 +13,11 @@
         <a href="signup.php">Sign Up</a>
     </div>
 </div>
+<div class="header">
+    <h1>
+    <?php 
+$title = explode('.', basename($_SERVER['PHP_SELF']));
+print ucwords(reset($title));
+    ?>
+    </h1>
+</div>

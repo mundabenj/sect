@@ -3,15 +3,11 @@
     require 'includes/header.php';
     require 'includes/nav.php';
 ?>
-
-<div class="header">
-    <h1>Sign Up</h1>
-</div>
 <div class="row">
     <div class="content">
         <h2>Sign Up</h2>
 
-<form action="" method="post">
+<form action="proc/processes.php" method="post">
     <input type="text" placeholder="Enter your full name" required/><br>
     <input type="email" placeholder="Enter your email address" required /><br>
     <input type="tel" placeholder="Enter your phone number" required /><br>
@@ -47,7 +43,7 @@
     <input type="password" placeholder="Create a password" required /><br>
     <input type="password" placeholder="Confirm your password" required /><br>
 <br>
-    <input type="submit" value="Sign Up" />
+    <input type="submit" name ="signup" value="Sign Up" />
     <a href="signin.php">Already have an account? Sign In</a>
 </form>
 

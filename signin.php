@@ -3,9 +3,7 @@
     require 'includes/header.php';
     require 'includes/nav.php';
 ?>
-<div class="header">
-    <h1>Sign In</h1>
-</div>
+
 <div class="row">
     <div class="content">
         <h2>Terms and Conditions</h2>

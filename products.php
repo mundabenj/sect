@@ -3,9 +3,7 @@
     require 'includes/header.php';
     require 'includes/nav.php';
 ?>
-<div class="header">
-    <h1>Products</h1>
-</div>
+
 <div class="row">
     <div class="content">
 <h1>Heading 1</h1>

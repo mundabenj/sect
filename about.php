@@ -3,10 +3,6 @@
     require 'includes/header.php';
     require 'includes/nav.php';
 ?>
-
-<div class="header">
-    <h1>About Us</h1>
-</div>
 <div class="row">
     <div class="content">
         <h2>Welcome to Our About Page</h2>

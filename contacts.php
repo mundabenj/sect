@@ -3,15 +3,11 @@
     require 'includes/header.php';
     require 'includes/nav.php';
 ?>
-
-<div class="header">
-    <h1>Talk to Us</h1>
-</div>
 <div class="row">
     <div class="content">
         <h2>Talk to Us</h2>
         
-<form action="processes.php" method="post">
+<form action="proc/processes.php" method="post">
     <input type="text" name="allnames" placeholder="Enter your full name" required/><br>
     <input type="email" name="email" placeholder="Enter your email address" required /><br>
     <input type="tel" name="phone" placeholder="Enter your phone number" required /><br>
