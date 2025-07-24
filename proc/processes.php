@@ -63,9 +63,7 @@ if(isset($_POST['signup'])) {
         echo "Username already exists.";
         exit;
     }
-
-
-    // vlidate email format
+// validate email format
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Invalid email format.";
@@ -83,10 +81,8 @@ if(isset($_POST['signup'])) {
         exit;
     }
 
-
     // encrypt password using password_hash
     $hashed_password = password_hash($confirm_password, PASSWORD_DEFAULT);
-
 
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO users (fullname, email, phone, genderId, roleId, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -104,4 +100,28 @@ if(isset($_POST['signup'])) {
     $stmt->close();
 }   
 
+if(isset($_GET['delete_user'])) {
+    // Retrieve user ID
+    $userId = $_GET['delete_user'];
 
+    // Validate user ID
+    if(empty($userId)) {
+        echo "User ID is required.";
+        exit;
+    }
+
+    // Prepare and bind
+    $stmt = $conn->prepare("DELETE FROM users WHERE userId = ?");
+    $stmt->bind_param("i", $userId);
+
+    // Execute the statement
+    if($stmt->execute()) {
+        header("Location: ../persons.php?status=deleted");
+        exit;
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    // Close the statement
+    $stmt->close();
+}

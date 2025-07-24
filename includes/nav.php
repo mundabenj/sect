@@ -5,7 +5,7 @@
     <a href="#">Projects</a>
     <a href="#">Team</a>
     <a href="products.php">Products</a>
-    <a href="#">Hobbies</a>
+    <a href="persons.php">Persons</a>
     <a href="contacts.php">Contacts</a>
 
     <div class="topnav-right">

@@ -12,45 +12,7 @@
        <img src="images/clock.jpg" alt="Wall Clock" width="200" height="200">
    </div> 
 
-<table>
-    <caption>Stationery Products</caption>
-    <tr>
-        <th>SN</th>
-        <th>Items</th>
-        <th>Quantity</th>
-        <th>U Price</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>Pen</td>
-        <td>10</td>
-        <td>$1.00</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Pencil</td>
-        <td>20</td>
-        <td>$0.50</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>Notebook</td>
-        <td>15</td>
-        <td>$2.00   </td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>Ruler</td>
-        <td>25</td>
-        <td>$1.50</td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>Pencil</td>
-        <td>20</td>
-        <td>$0.50</td>
-    </tr>
-</table>
+
 
 
     </div>
