@@ -1,8 +1,9 @@
 <?php
 	session_start();
 		
-	unset($_SESSION['name']);
-		
-	print $_SESSION['name'];
-	
+print mt_rand(1000, 9999);
+
+
+// lbxd hxbb sgde aknq	
 ?>
+

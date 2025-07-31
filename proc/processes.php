@@ -1,5 +1,6 @@
 <?php
 require '../config/dbConnect.php';
+require '../includes/fnc.php';
 // Check if the form is submitted
 if(isset($_POST['send_message'])) {
     // Retrieve form data
@@ -83,13 +84,18 @@ if(isset($_POST['signup'])) {
 
     // encrypt password using password_hash
     $hashed_password = password_hash($confirm_password, PASSWORD_DEFAULT);
-
+    
+    $token = mt_rand(1000, 9999);
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (fullname, email, phone, genderId, roleId, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $fullname, $email, $phone, $genderId, $roleId, $username, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO users (fullname, email, phone, genderId, roleId, username, password, token) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssi", $fullname, $email, $phone, $genderId, $roleId, $username, $hashed_password, $token);
 
     // Execute the statement
     if($stmt->execute()) {
+
+
+SendMail($email, "Welcome to Our Platform", "Hi $fullname, thank you for signing up! <br>Your verification code is:<strong> $token</strong>");
+
         header("Location: ../persons.php?status=success");
         exit;
     } else {
