@@ -2,6 +2,8 @@
     require 'config/dbConnect.php';
     require 'includes/header.php';
     require 'includes/nav.php';
+    require 'includes/fnc.php';
+    checkUserLoggedIn();
 ?>
 <div class="row">
     <div class="content">

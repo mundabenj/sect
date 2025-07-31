@@ -157,3 +157,47 @@ if(isset($_POST['update_user'])) {
     // Close the statement
     $stmt->close();
 }
+
+if(isset($_POST['signin'])) {
+    // Retrieve form data
+    $entered_username = $_POST['username'];
+    $entered_passphrase = $_POST['passphrase'];
+
+    // Validate inputs
+    if(empty($entered_username) || empty($entered_passphrase)) {
+        echo "Username and passphrase are required.";
+        exit;
+    }
+
+    // Prepare and bind
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->bind_param("s", $entered_username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if($result->num_rows > 0) {
+        $_SESSION['consort'] = $result->fetch_assoc();
+        // Verify password
+        if(password_verify($entered_passphrase, $_SESSION['consort']['password'])) {
+            header("Location: ../persons.php");
+            exit;
+        } else {
+            unset($_SESSION['consort']);
+            echo "Invalid passphrase.";
+        }
+    } else {
+        unset($_SESSION['consort']);
+        echo "Username not found.";
+    }
+
+    // Close the statement
+    $stmt->close();
+}
+
+if(isset($_GET['logout'])) {
+    // Destroy the session
+    session_destroy();
+    unset($_SESSION['consort']);
+    header("Location: ../signin.php?status=logged_out");
+    exit;
+}

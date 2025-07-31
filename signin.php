@@ -22,11 +22,11 @@
     <div class="sidebar">
                 <h2>Sign In</h2>
 
-<form action="" method="post">
-    <input type="text" placeholder="Enter your username" required/><br>
-    <input type="password" placeholder="Enter your password" required /><br>
+<form action="proc/processes.php" method="post">
+    <input type="text" name="username" placeholder="Enter your username" autofocus required/><br>
+    <input type="password" name="passphrase" placeholder="Enter your passphrase" required /><br>
 <br>
-    <input type="submit" value="Sign In" />
+    <input type="submit" name="signin" value="Sign In" />
     <a href="signup.php">Don't have an account? Sign Up</a>
 </form>
         <h2>Side Bar</h2>

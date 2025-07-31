@@ -9,8 +9,13 @@
     <a href="contacts.php">Contacts</a>
 
     <div class="topnav-right">
+        <?php if(isset($_SESSION['consort'])) { ?>
+        <a href="profile.php">Profile</a>
+        <a href="proc/processes.php?logout=true">Logout</a>
+        <?php } else { ?>
         <a href="signin.php">Sign In</a>
         <a href="signup.php">Sign Up</a>
+        <?php } ?>
     </div>
 </div>
 <div class="header">
